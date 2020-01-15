@@ -56,5 +56,4 @@ def to_words(sentence):
             elif pos in ['JJR', 'JJS']:
                 word = wnl.lemmatize(word, 'a')
             res.append(word)
-    print(res)
     return res
