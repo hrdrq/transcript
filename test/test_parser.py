@@ -58,7 +58,7 @@ I'm having contractions! - How many months pregnant are you? - Only eight months
         self.assertEqual(to_words(sen1), res1)
 
         sen2 = 'Somebody, help me over here! Somebody, help me out! Oh, my God! Walt! Walt! Stay away from the gas! Stay there! Help! Help! Somebody, help me! Oh, my leg! Hey, get over here.'
-        res2 = ['somebody', 'help', 'me', 'over', 'here', 'somebody', 'help', 'me', 'out', 'oh', 'my', 'God', 'Walt', 'Walt', 'stay', 'away', 'from', 'the', 'gas', 'stay', 'there', 'Help', 'Help', 'somebody', 'help', 'me', 'oh', 'my', 'leg', 'hey', 'get', 'over', 'here']
+        res2 = ['somebody', 'help', 'me', 'over', 'here', 'somebody', 'help', 'me', 'out', 'oh', 'my', 'god', 'walt', 'walt', 'stay', 'away', 'from', 'the', 'gas', 'stay', 'there', 'help', 'help', 'somebody', 'help', 'me', 'oh', 'my', 'leg', 'hey', 'get', 'over', 'here']
         self.assertEqual(to_words(sen2), res2)
 
         sen3 = "I'm having contractions! - How many months pregnant are you? - Only eight months."
@@ -74,7 +74,7 @@ I'm having contractions! - How many months pregnant are you? - Only eight months
         self.assertEqual(to_words(sen5), res5)
 
         sen6 = "What? What are you talking about, you spent a year in Paris! - Drinking! Not studying! - Iteration 7-2-9-4-5-3-1 ."
-        res6 = ['what', 'what', 'be', 'you', 'talk', 'about', 'you', 'spend', 'a', 'year', 'in', 'Paris', 'drink', 'not', 'study', 'iteration']
+        res6 = ['what', 'what', 'be', 'you', 'talk', 'about', 'you', 'spend', 'a', 'year', 'in', 'paris', 'drink', 'not', 'study', 'iteration']
         self.assertEqual(to_words(sen6), res6)
 
         sen7 = "The pilot said we were over 1 ,000 miles off course."
@@ -82,5 +82,5 @@ I'm having contractions! - How many months pregnant are you? - Only eight months
         self.assertEqual(to_words(sen7), res7)
 
         sen8 = "JIN: 내 옆에서 없어지면 안 돼. 내가 어디로 가든지 꼭 따라와. 알겠지? [Sun nods.] 다른 사람 신경쓰지 말고 우린 같이 있어야 돼."
-        res8 = ['jin', 'Sun', 'nod']
+        res8 = ['jin', 'sun', 'nod']
         self.assertEqual(to_words(sen8), res8)

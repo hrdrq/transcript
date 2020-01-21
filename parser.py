@@ -46,11 +46,11 @@ def to_words(sentence):
             word = data[LEMMA]
             if not re.search('[a-zA-Z]', word):
                 continue
-            # NNP: noun, proper singular
-            # NNPS: noun, proper plural
-            if pos in ['NNP', 'NNPS', 'NNP-LOC', 'NNPS-LOC']:
-                # usually it's uppercase
-                word = data[WORD][0] + word[1:]
+            # # NNP: noun, proper singular
+            # # NNPS: noun, proper plural
+            # if pos in ['NNP', 'NNPS', 'NNP-LOC', 'NNPS-LOC']:
+            #     # usually it's uppercase
+            #     word = data[WORD][0] + word[1:]
             elif pos in ['RB']:
                 word = adv_to_adj(word)
             elif pos in ['JJR', 'JJS']:
