@@ -52,9 +52,16 @@ class DB():
         cur.close()
 
     def add(self, season, episode, sentence, word):
+        word = word.replace('"', '')
+        if len(word) > 32:
+            return
         sql = 'SELECT * FROM {} WHERE word="{}"'.format(self.name, word)
-        self.cur.execute(sql)
-        res = self.cur.fetchone()
+        try:
+            self.cur.execute(sql)
+            res = self.cur.fetchone()
+        except Exception as e:
+            print(word)
+            raise e
         sentence = sentence.replace('"', '`')
         if res is None:
             sql = 'INSERT INTO {} (word, count, s1, ep1) VALUES ("{}", 1, "{}", "{}")' \
@@ -74,7 +81,12 @@ class DB():
             else:
                 sql = 'UPDATE {} SET count={} where id={}' \
                       .format(self.name, res['count'] + 1, res['id'])
-        self.cur.execute(sql)
-        self.conn.commit()
+        try:
+            self.cur.execute(sql)
+            self.conn.commit()
+        except Exception as e:
+            print(season, episode, word)
+            print(sentence)
+            raise e
 
 

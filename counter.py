@@ -16,7 +16,7 @@ def get_seasons(dir_path):
 
 def get_episodes(season_path):
     data = list(os.walk(season_path))[0]
-    return [data[0] + '/' + x for x in data[2] if x.endswith('.txt')]
+    return sorted([data[0] + '/' + x for x in data[2] if x.endswith('.txt')])
 
 def count(db, season, episode, f):
     text = f.read()
